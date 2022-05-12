@@ -306,7 +306,7 @@ const render = (reactElementOrStringOrNumber, container) => {
       .filter((props) => props !== "children")
       .forEach(
         (props) =>
-          (actualDomElement[props] = reactElementOrStringOrNumber[props])
+          (actualDomElement[props] = reactElementOrStringOrNumber.props[props])
       );
   }
 
@@ -358,7 +358,8 @@ if (reactElementOrStringOrNumber.props) {
   Object.keys(reactElementOrStringOrNumber.props)
     .filter((props) => props !== "children")
     .forEach(
-      (props) => (actualDomElement[props] = reactElementOrStringOrNumber[props])
+      (props) =>
+        (actualDomElement[props] = reactElementOrStringOrNumber.props[props])
     );
 }
 ```

@@ -33,7 +33,7 @@ const render = (reactElementOrStringOrNumber, container) => {
       .filter((props) => props !== "children")
       .forEach(
         (props) =>
-          (actualDomElement[props] = reactElementOrStringOrNumber[props])
+          (actualDomElement[props] = reactElementOrStringOrNumber.props[props])
       );
   }
 
